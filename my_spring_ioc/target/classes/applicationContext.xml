@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="userDao" class="com.heiko.dao.ipml.UserDaoImpl"/>-->
+
+<!--    <bean id="userDao" class="com.heiko.dao.ipml.UserDaoImpl">-->
+<!--        <property name="username" value="zhuhaokai"/>-->
+<!--        <property name="age" value="18"/>-->
+<!--    </bean>-->
+
+    <bean id="userDao" class="com.heiko.dao.ipml.UserDaoImpl">
+        <property name="username" value="zhuhaokai"/>
+        <property name="age" value="18"/>
+        <property name="strList">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <property name="userMap">
+            <map>
+                <entry key="u1" value-ref="user1"></entry>
+                <entry key="u2" value-ref="user2"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="p1">hhh</prop>
+                <prop key="p2">ggg</prop>
+                <prop key="p3">ccc</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="user1" class="com.heiko.domain.User">
+        <property name="name" value="lisi"/>
+        <property name="addr" value="hangzhou"/>
+    </bean>
+
+    <bean id="user2" class="com.heiko.domain.User">
+        <property name="name" value="wangwu"/>
+        <property name="addr" value="shanghai"/>
+    </bean>
+    <!--通过set方法注入-->
+<!--    <bean id="userService" class="com.heiko.service.impl.UserServiceImpl">-->
+<!--        <property name="userDao" ref="userDao"/>-->
+<!--    </bean>-->
+
+    <!--通过构造方法注入-->
+    <bean id="userService" class="com.heiko.service.impl.UserServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+</beans>
