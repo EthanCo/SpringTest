@@ -53,4 +53,7 @@
     <bean id="userService" class="com.heiko.service.impl.UserServiceImpl">
         <constructor-arg name="userDao" ref="userDao"/>
     </bean>
+
+    <!--引入其他配置文件，用来分模块开发-->
+    <import resource="applicationContext.user.xml"/>
 </beans>
