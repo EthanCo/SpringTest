@@ -4,12 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
-<!--        <property name="driverClass" value="com.mysql.jdbc.Driver"/>-->
-<!--        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test"/>-->
-<!--        <property name="user" value="root"/>-->
-<!--        <property name="password" value="root"/>-->
-<!--    </bean>-->
+    <!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+    <!--        <property name="driverClass" value="com.mysql.jdbc.Driver"/>-->
+    <!--        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test"/>-->
+    <!--        <property name="user" value="root"/>-->
+    <!--        <property name="password" value="root"/>-->
+    <!--    </bean>-->
 
     <!--加载外部的properties文件-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
@@ -24,5 +24,11 @@
         <property name="jdbcUrl" value="${jdbc.url}"/>
         <property name="user" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean id="userDao" class="com.heiko.dao.impl.UserDaoImpl"></bean>
+
+    <bean id="userService" class="com.heiko.uservice.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"></property>
     </bean>
 </beans>
