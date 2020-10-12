@@ -19,6 +19,11 @@
         <aop:aspect ref="myAspect">
             <!--切面:切点+通知-->
             <aop:before method="before" pointcut="execution(public void com.heiko.aop.Target.save())"/>
+            <!--pointcut:execution([修饰符] 返回值类型 包名.类名.方法名(参数))-->
+            <!--修饰符可以省略-->
+            <!--返回值类型、包名、类名、方法名可以使用*代替任意，通配-->
+            <!--包名与类名之间一个点 . 代表当下包下的类，两个点 .. 表示当前包及其子包下的类-->
+            <!--参数列表可以使用两个点..表示任意个数，任意类型的参数列表-->
         </aop:aspect>
     </aop:config>
 </beans>
