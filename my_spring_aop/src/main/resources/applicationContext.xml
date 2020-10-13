@@ -17,12 +17,21 @@
     <aop:config>
         <!--声明切面-->
         <aop:aspect ref="myAspect">
+            <!--抽取切点表达式-->
+            <aop:pointcut id="myPointcut" expression="execution(public void com.heiko.aop.Target.save())"/>
+
             <!--切面:切点+通知-->
-            <aop:before method="before" pointcut="execution(public void com.heiko.aop.Target.save())"/>
-            <aop:after-returning method="afterReturning" pointcut="execution(public void com.heiko.aop.Target.save())"/>
-            <aop:around method="around" pointcut="execution(public void com.heiko.aop.Target.save())"/>
-            <aop:after-throwing method="afterThrowing" pointcut="execution(public void com.heiko.aop.Target.save())"/>
-            <aop:after method="after" pointcut="execution(public void com.heiko.aop.Target.save())"/>
+<!--            <aop:before method="before" pointcut="execution(public void com.heiko.aop.Target.save())"/>-->
+<!--            <aop:after-returning method="afterReturning" pointcut="execution(public void com.heiko.aop.Target.save())"/>-->
+<!--            <aop:around method="around" pointcut="execution(public void com.heiko.aop.Target.save())"/>-->
+<!--            <aop:after-throwing method="afterThrowing" pointcut="execution(public void com.heiko.aop.Target.save())"/>-->
+<!--            <aop:after method="after" pointcut="execution(public void com.heiko.aop.Target.save())"/>-->
+            <aop:before method="before" pointcut-ref="myPointcut"/>
+            <aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+            <aop:around method="around" pointcut-ref="myPointcut"/>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="myPointcut"/>
+            <aop:after method="after" pointcut-ref="myPointcut"/>
+
             <!--pointcut:execution([修饰符] 返回值类型 包名.类名.方法名(参数))-->
             <!--修饰符可以省略-->
             <!--返回值类型、包名、类名、方法名可以使用*代替任意，通配-->
