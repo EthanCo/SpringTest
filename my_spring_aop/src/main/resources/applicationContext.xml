@@ -19,11 +19,22 @@
         <aop:aspect ref="myAspect">
             <!--切面:切点+通知-->
             <aop:before method="before" pointcut="execution(public void com.heiko.aop.Target.save())"/>
+            <aop:after-returning method="afterReturning" pointcut="execution(public void com.heiko.aop.Target.save())"/>
+            <aop:around method="around" pointcut="execution(public void com.heiko.aop.Target.save())"/>
+            <aop:after-throwing method="afterThrowing" pointcut="execution(public void com.heiko.aop.Target.save())"/>
+            <aop:after method="after" pointcut="execution(public void com.heiko.aop.Target.save())"/>
             <!--pointcut:execution([修饰符] 返回值类型 包名.类名.方法名(参数))-->
             <!--修饰符可以省略-->
             <!--返回值类型、包名、类名、方法名可以使用*代替任意，通配-->
             <!--包名与类名之间一个点 . 代表当下包下的类，两个点 .. 表示当前包及其子包下的类-->
             <!--参数列表可以使用两个点..表示任意个数，任意类型的参数列表-->
+
+            <!--通知的类型-->
+            <!--aop:before 用于配置前置通知，指定增强的方法在切入点方法之前执行-->
+            <!--aop:returning 用于配置后置通知，指定增强的方法在切入点方法之后执行-->
+            <!--aop:around 用于配置环绕通知，指定增强的方法在切入点方法之前和之后都执行-->
+            <!--aop:throwing 用于配置异常抛出通知，指定增强的方法在出现异常时执行-->
+            <!--aop:after 用于配置最终通知，无论增强方法执行是否有异常都会执行-->
         </aop:aspect>
     </aop:config>
 </beans>
