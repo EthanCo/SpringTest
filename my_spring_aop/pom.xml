@@ -6,7 +6,11 @@
 
     <groupId>com.heiko</groupId>
     <artifactId>my_spring_aop</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>my_spring_mvc</module>
+    </modules>
 
     <dependencies>
         <dependency>

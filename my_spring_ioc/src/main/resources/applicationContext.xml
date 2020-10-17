@@ -10,7 +10,7 @@
 <!--        <property name="age" value="18"/>-->
 <!--    </bean>-->
 
-    <bean id="userDao" class="com.heiko.dao.ipml.UserDaoImpl">
+    <bean id="userDao" class="com.heiko.dao.impl.UserDaoImpl">
         <property name="username" value="zhuhaokai"/>
         <property name="age" value="18"/>
         <property name="strList">

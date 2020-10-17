@@ -1,4 +1,4 @@
-package com.heiko.dao.ipml;
+package com.heiko.dao.impl;
 
 import com.heiko.dao.UserDao;
 import com.heiko.domain.User;
