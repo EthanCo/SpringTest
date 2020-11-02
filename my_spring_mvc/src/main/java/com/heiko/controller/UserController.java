@@ -2,15 +2,18 @@ package com.heiko.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.heiko.domain.User;
+import com.heiko.domain.VO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -90,5 +93,54 @@ public class UserController {
         user.setUsername("liuliu");
         user.setAge(23);
         return user;
+    }
+
+    @RequestMapping("/quick11")
+    @ResponseBody
+    public void save11(String username, int age) throws IOException {
+        System.out.println("username:" + username);
+        System.out.println("age:" + age);
+    }
+
+    @RequestMapping("/quick12")
+    @ResponseBody
+    public void save12(User user) throws IOException {
+        System.out.println(user);
+    }
+
+    @RequestMapping("/quick13")
+    @ResponseBody
+    public void save13(String[] strs) throws IOException {
+        System.out.println(Arrays.asList(strs));
+    }
+
+    @RequestMapping("/quick14")
+    @ResponseBody
+    public void save14(VO vo) throws IOException {
+        System.out.println(vo.toString());
+    }
+
+    @RequestMapping("/quick15")
+    @ResponseBody
+    public void save15(@RequestBody List<User> userList) throws IOException {
+        System.out.println("userList:" + userList);
+    }
+
+    @RequestMapping("/quick16")
+    @ResponseBody
+    public void save16(@RequestParam("name") String username) throws IOException {
+        System.out.println("name:" + username);
+    }
+
+    @RequestMapping("/quick17/{name}")
+    @ResponseBody
+    public void save17(@PathVariable(value = "name", required = true) String name) throws IOException {
+        System.out.println("name:" + name);
+    }
+
+    @RequestMapping("/quick18")
+    @ResponseBody
+    public void save18(Date date) throws IOException {
+        System.out.println("date:" + date);
     }
 }
