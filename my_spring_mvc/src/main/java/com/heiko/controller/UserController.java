@@ -6,11 +6,13 @@ import com.heiko.domain.VO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
@@ -163,5 +165,18 @@ public class UserController {
     @ResponseBody
     public void save21(@CookieValue(value = "JSESSIONID") String jsessionId) throws IOException {
         System.out.println("cookie:" + jsessionId);
+    }
+
+    @RequestMapping("/quick22")
+    @ResponseBody
+    public void save21(String username, MultipartFile uploadFile) throws IOException {
+        System.out.println("username:" + username);
+        System.out.println("uploadFile:" + uploadFile.getOriginalFilename());
+        File path = new File("D:\\upload");
+        if (!path.exists()) {
+            path.mkdirs();
+        }
+        File file = new File(path, uploadFile.getOriginalFilename());
+        uploadFile.transferTo(file);
     }
 }
