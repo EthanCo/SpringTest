@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring.iml" filepath="$PROJECT_DIR$/.idea/Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_spring_aop/my_spring_aop.iml" filepath="$PROJECT_DIR$/my_spring_aop/my_spring_aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my_spring_exception/my_spring_exception.iml" filepath="$PROJECT_DIR$/my_spring_exception/my_spring_exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_spring_interceptor/my_spring_interceptor.iml" filepath="$PROJECT_DIR$/my_spring_interceptor/my_spring_interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_spring_ioc/my_spring_ioc.iml" filepath="$PROJECT_DIR$/my_spring_ioc/my_spring_ioc.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_spring_ioc_anno/my_spring_ioc_anno.iml" filepath="$PROJECT_DIR$/my_spring_ioc_anno/my_spring_ioc_anno.iml" />
