@@ -169,7 +169,7 @@ public class UserController {
 
     @RequestMapping("/quick22")
     @ResponseBody
-    public void save21(String username, MultipartFile uploadFile) throws IOException {
+    public void save22(String username, MultipartFile uploadFile) throws IOException {
         System.out.println("username:" + username);
         System.out.println("uploadFile:" + uploadFile.getOriginalFilename());
         File path = new File("D:\\upload");
@@ -178,5 +178,15 @@ public class UserController {
         }
         File file = new File(path, uploadFile.getOriginalFilename());
         uploadFile.transferTo(file);
+    }
+
+    @RequestMapping("/quick23")
+    @ResponseBody
+    public void save23(String username, MultipartFile[] uploadFile) throws IOException {
+        System.out.println("username:" + username);
+        for (MultipartFile multipartFile : uploadFile) {
+            System.out.println("uploadFile:" + multipartFile.getOriginalFilename());
+            multipartFile.transferTo(new File("D:\\upload", multipartFile.getOriginalFilename()));
+        }
     }
 }

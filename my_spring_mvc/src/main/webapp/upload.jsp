@@ -16,5 +16,12 @@
         文件:<input type="file" name="uploadFile"><br/>
         <input type="submit" value="提交">
     </form>
+
+    <form action="${pageContext.request.contextPath}/quick23" method="post" enctype="multipart/form-data">
+        名称:<input type="text" name="username"><br/>
+        文件1:<input type="file" name="uploadFile"><br/>
+        文件2:<input type="file" name="uploadFile2"><br/>
+        <input type="submit" value="提交">
+    </form>
 </body>
 </html>

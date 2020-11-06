@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="my_spring_interceptor" />
         <module name="my_spring_mvc" />
         <module name="my_spring_ioc" />
         <module name="my_spring_ioc_anno" />
@@ -14,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="my_spring_aop" target="1.5" />
+      <module name="my_spring_interceptor" target="1.5" />
       <module name="my_spring_ioc" target="1.5" />
       <module name="my_spring_ioc_anno" target="1.5" />
       <module name="my_spring_jdbc" target="1.5" />

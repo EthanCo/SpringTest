@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/my_spring_interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/my_spring_jdbc" />
     <file type="web" url="file://$PROJECT_DIR$/my_spring_mvc" />
   </component>
@@ -16,6 +17,7 @@
         <option value="$PROJECT_DIR$/my_spring_jdbc/pom.xml" />
         <option value="$PROJECT_DIR$/../my_spring_mvc/pom.xml" />
         <option value="$PROJECT_DIR$/my_spring_mvc/pom.xml" />
+        <option value="$PROJECT_DIR$/my_spring_interceptor/pom.xml" />
       </list>
     </option>
   </component>
