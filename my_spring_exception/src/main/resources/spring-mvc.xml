@@ -20,5 +20,8 @@
     <mvc:default-servlet-handler/>
 
     <!--4、组件扫描  扫描Controller-->
-    <context:component-scan base-package="com.heiko"/>
+    <context:component-scan base-package="com.heiko.controller"/>
+
+    <!--自定义异常处理器-->
+    <bean class="com.heiko.resolver.MyExceptionResolver"/>
 </beans>
